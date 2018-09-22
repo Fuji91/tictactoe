@@ -32,7 +32,7 @@ def doMove(Symbol,move):
       nums = [i for i in range(1, 10)]
       while not move in nums:
             try:
-                 print("Choose a between 1 and 9")
+                 print("Choose a cell between 1 and 9")
                  if Symbol == "O":
                         iTurn = 1
                         while iTurn == 1:
@@ -54,7 +54,7 @@ def doMove(Symbol,move):
                                     print("Choose an empty bracket!")
 
             except (ValueError, IndexError):
-                pass
+                print("Choose a cell between 1 and 9, enter a number")
 
 def isWinner():
       winValues = ([7, 8, 9], [4, 5, 6], [1, 2, 3], [7, 4, 1, ], [8, 5, 2], [9, 6, 3], [7, 5, 3], [9, 5, 1])
@@ -70,13 +70,12 @@ def isWinner():
                   print("You won,",user_name2)
                   rematch()
 
-            else:
-                  pass
+
 
 def rematch():
       global board
       re_match = input("Rematch?(y/n): ")
-      if re_match == "y" or re_match == "yes":
+      if re_match.lower() == "y" or re_match.lower() == "yes":
             board = [' '] * 10
 
       else:
